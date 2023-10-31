@@ -2,7 +2,7 @@ from typing import Self
 
 
 class Etiqueta:
-    def __init__(self, color, maxTime):
+    def __init__(self, color:str, maxTime:int):
         self.color=color
         self.maxTime=maxTime
 
