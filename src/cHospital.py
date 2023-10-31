@@ -1,5 +1,5 @@
-import cPaciente
-import cEnfermero
+from cPaciente import cPaciente
+from cEnfermero import cEnfermero
 
 
 class cHospital:
