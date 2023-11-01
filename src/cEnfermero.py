@@ -1,4 +1,5 @@
-from cPaciente import cPaciente
+from src.cPaciente import cPaciente
+
 class cEnfermero:
 
     def __init__(self, name:str, id:int, lastName:str, shift:str, available:bool):

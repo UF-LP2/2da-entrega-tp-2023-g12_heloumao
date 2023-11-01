@@ -1,11 +1,8 @@
-#class cArbolSintomas:
-class Node:
-    def __init__(self, val, left = Node, right = Node):
-        self.val=val
+from src.cNode import cNode
+
+class cArbol:
+    def __init__(self, value:int , left:cNode, right:cNode):
+        self.value=value
         self.left=left
         self.right=right
-    def insert(self, data):
         
-
-        
-
