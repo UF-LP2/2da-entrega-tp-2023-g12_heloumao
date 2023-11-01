@@ -1,4 +1,4 @@
-from cEtiqueta import cEtiqueta
+import cEtiqueta  
 class cPaciente:
     def __init__(self, name:str, lastName:str, id: int, symptoms: [],  gender:str, age:int, priority:bool):
         self.name= name

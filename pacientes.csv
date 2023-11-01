@@ -1,0 +1,101 @@
+first_name,last_name,id,symptoms1,symptoms2,symptoms3,gender,age,priority
+William,Hylton,1,hemorrhage,paleness,pain,non-binary,50,true
+Marys,Tapply,2,unconscious,pain,fever,male,49,true
+Dena,McGlew,3,agitated pulsations,hemorrhage,pain,non-binary,97,false
+Shelby,Wilbor,4,,pain,paleness,non-binary,88,true
+Rand,Massow,5,paleness,,irregular breathing,male,98,true
+Morna,Greenhalgh,6,fever,irregular breathing,agitated pulsations,prefer not to say,70,true
+Hamilton,Harriott,7,pain,paleness,blurry vision,non-binary,8,false
+Perle,Kirkbright,8,hemorrhage,fever,irregular breathing,male,95,false
+Mischa,Guillard,9,blurry vision,agitated pulsations,,male,74,false
+Abie,Snoxall,10,agitated pulsations,paleness,unconscious,prefer not to say,45,true
+Nydia,Forgie,11,blurry vision,hemorrhage, ,male,83,false
+Goddart,Esler,12,fever,pain,agitated pulsations,non-binary,43,false
+Kyla,Driutti,13,blurry vision,hemorrhage,paleness,male,60,true
+Dasi,Sedger,14,unconscious,blurry vision,irregular breathing,non-binary,56,false
+Budd,Stabbins,15,hemorrhage,fever,unconscious,male,26,true
+Pavel,Sadd,16,pain,paleness,fever,female,82,true
+Karry,Nickols,17,fever,agitated pulsations,hemorrhage,prefer not to say,73,true
+Jacky,Paley,18,agitated pulsations,unconscious,paleness,female,54,false
+Willetta,Martins,19,pain,unconscious,paleness,prefer not to say,27,false
+Tito,Quinnette,20,,irregular breathing,hemorrhage,male,47,false
+Morganne,Scalera,21,unconscious,hemorrhage,blurry vision,non-binary,54,false
+Fidelio,Mawhinney,22,pain,agitated pulsations,paleness,female,2,true
+Vlad,Gladdifh,23,fever,unconscious,paleness,non-binary,23,false
+Nicolea,Ionn,24,unconscious,pain,blurry vision,non-binary,84,true
+Arther,Donavan,25,hemorrhage,irregular breathing,unconscious,female,16,true
+Jazmin,Keddy,26,fever,,paleness,prefer not to say,42,false
+Engelbert,Jakubovski,27,pain,hemorrhage,fever,male,70,true
+Ronny,Habble,28,blurry vision, ,agitated pulsations,prefer not to say,13,false
+Karin,Galbreath,29,pain,agitated pulsations,hemorrhage,non-binary,80,false
+Osborn,Melsome,30,pain,irregular breathing,paleness,non-binary,37,false
+Lesly,Fahrenbach,31,,irregular breathing,paleness,male,53,false
+Delphinia,Bewshea,32,irregular breathing,hemorrhage,paleness,male,91,true
+Dalston,Fashion,33,paleness,fever,irregular breathing,non-binary,66,false
+Harley,Munns,34,fever,blurry vision,unconscious,prefer not to say,76,false
+Ignaz,Maccrea,35,agitated pulsations,pain,unconscious,non-binary,22,false
+Kissiah,Digges,36,fever,paleness,,male,69,true
+Noah,Mapother,37,blurry vision,unconscious,paleness,prefer not to say,56,false
+Flo,Petyankin,38,hemorrhage,fever,,non-binary,49,false
+Brose,Chatband,39,fever,hemorrhage,irregular breathing,prefer not to say,63,false
+Rhody,Kemmer,40,paleness,hemorrhage,,male,94,false
+Abagail,De Beauchamp,41,fever,hemorrhage,paleness,female,35,false
+Hall,Schwier,42,agitated pulsations,paleness,fever,non-binary,62,true
+Rudiger,Twelves,43,pain,blurry vision,agitated pulsations,female,24,true
+Sascha,Van Dijk,44,agitated pulsations,pain,paleness,male,90,true
+Nappie,Bucklee,45,,,,non-binary,57,false
+Mariann,Dominetti,46,hemorrhage,paleness,pain,prefer not to say,85,true
+Ruthi,Rentoul,47,hemorrhage,fever,irregular breathing,prefer not to say,14,false
+Christal,Goodbarne,48,pain,,,female,2,true
+Kelly,Topes,49,paleness,hemorrhage,unconscious,female,85,true
+Purcell,Guilloux,50,hemorrhage,agitated pulsations,pain,female,18,true
+Karry,Wellard,51,unconscious,paleness,hemorrhage,non-binary,84,false
+Chev,Esser,52,paleness,unconscious,,non-binary,42,true
+Timmy,Hanwell,53,unconscious,fever,irregular breathing,prefer not to say,34,false
+Vivienne,Downgate,54,paleness,unconscious,irregular breathing,female,64,true
+Junia,Vasiltsov,55,,hemorrhage,paleness,male,23,false
+Raddy,Watt,56,irregular breathing,pain,agitated pulsations,female,96,true
+Rubi,Vannini,57,blurry vision,,paleness,prefer not to say,48,false
+Antonina,Joist,58,paleness,pain,irregular breathing,non-binary,53,false
+Pate,Rowswell,59,pain,irregular breathing,,male,64,true
+Walton,Isard,60,,irregular breathing,fever,female,68,true
+Whitaker,Wolfindale,61,paleness,unconscious,,female,100,true
+Casper,Drane,62,pain,agitated pulsations,,non-binary,53,false
+Dudley,Cancott,63,fever,blurry vision,irregular breathing,male,61,false
+Tedman,O' Molan,64,blurry vision,pain,hemorrhage,prefer not to say,78,false
+Izak,Faithfull,65,blurry vision,fever,agitated pulsations,prefer not to say,51,false
+Nedda,Tye,66,blurry vision, ,unconscious,non-binary,55,false
+Maxie,Chinnick,67,,irregular breathing,paleness,non-binary,32,true
+Koenraad,Giorgetti,68,unconscious,paleness,pain,prefer not to say,16,false
+Gualterio,Gerrels,69,paleness,irregular breathing,,prefer not to say,52,false
+Kettie,Titheridge,70,,paleness,fever,prefer not to say,82,true
+Isa,Slowley,71,,unconscious,irregular breathing,female,80,true
+Claudell,Leehane,72,unconscious,fever,agitated pulsations,non-binary,15,true
+Ellen,Upstell,73,hemorrhage,,pain,prefer not to say,91,true
+Ediva,Keave,74,paleness,unconscious,blurry vision,female,0,true
+Siobhan,Grover,75,unconscious,pain,,non-binary,95,false
+Idaline,Josefer,76,hemorrhage,paleness,blurry vision,male,33,false
+Fionna,Albone,77,paleness,agitated pulsations,unconscious,prefer not to say,77,true
+Wernher,Eddicott,78,pain,paleness,blurry vision,prefer not to say,55,false
+Vinson,St Leger,79,,unconscious,irregular breathing,non-binary,61,true
+Fletcher,Padbury,80,,agitated pulsations,hemorrhage,female,6,false
+Meaghan,Dundin,81,fever,,blurry vision,prefer not to say,71,false
+Bartie,MacPharlain,82,,fever,unconscious,non-binary,76,false
+Marleen,Cicullo,83,irregular breathing,hemorrhage,,female,54,true
+Elka,Comellini,84,agitated pulsations,blurry vision,irregular breathing,non-binary,46,true
+Marianne,Aleveque,85,hemorrhage,paleness,unconscious,non-binary,67,true
+Noll,Hazeltine,86,fever,hemorrhage,unconscious,female,95,false
+Jobye,Giovannini,87,agitated pulsations,unconscious,,prefer not to say,36,false
+Rochella,Rennles,88,blurry vision,hemorrhage,unconscious,female,86,false
+Keven,Cartwight,89,fever,pain,blurry vision,non-binary,91,false
+Penni,Dmytryk,90,agitated pulsations,pain,irregular breathing,non-binary,31,true
+Michal,Dole,91,unconscious,pain,hemorrhage,female,66,false
+Kristoforo,Dagon,92,fever,hemorrhage,irregular breathing,male,59,true
+Timofei,Cornilli,93,agitated pulsations,irregular breathing,pain,male,18,true
+Silvano,Pien,94,blurry vision,unconscious,fever,male,70,false
+Tony,Eastmead,95,pain,unconscious,irregular breathing,prefer not to say,90,false
+Had,Krysztofiak,96,pain,paleness,hemorrhage,male,59,true
+Nadia,Annice,97,blurry vision,hemorrhage,unconscious,male,31,true
+Carlyle,Danett,98,fever,irregular breathing,unconscious,non-binary,52,true
+Banky,Maybery,99,agitated pulsations,paleness,unconscious,prefer not to say,42,false
+Constantin,Pichmann,100,paleness,blurry vision,,non-binary,54,false

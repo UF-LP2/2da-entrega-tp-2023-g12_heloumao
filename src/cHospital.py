@@ -1,17 +1,22 @@
-from cPaciente import cPaciente
-from cEnfermero import cEnfermero
+import cPaciente
+import cEnfermero
 import random
-
+from binarytree import build
+import binarytree
 
 
 class cHospital:
-    def __init__(self, name:str, patients: list(cPaciente), nurses:list(cEnfermero)):
+    def __init__(self, name:str, patients: [], nurses:[]):
         self.name=name
         self.patients=patients
         self.nurses=nurses
 
 
-    #def crearArbol():
+    def crearArbol()->binarytree:
+        nodes=[14,12,16,10,13,15,17,8,11,None, None, None, None,None, None,6,9,None,None,4,7,None, None, 2,5,None,None, 1,3,None,None]
+        binary_tree=build(nodes)
+        return binary_tree
+    
     def shifts():
         x=random.randrange(23)
         if x<23 and x>=16:
@@ -25,11 +30,11 @@ class cHospital:
     
     #def register (pac:cPaciente, pacientes:list(cPaciente), urgents:list(cPaciente))->list(cPaciente):  #LO TENEMOS QUE ARMAR CON EL RECORRIDO DEL ARBOL 
 
-    def mergeQueues(pacientes: list(cPaciente), urgents:list(cPaciente))->list(cPaciente):
+    def mergeQueues(pacientes: [], urgents:[])->list(cPaciente):
         return (urgents+ pacientes)
 
 
-    def rearrange(pacientes: list(cPaciente)) ->list(cPaciente):#MERGE SORT
+    def rearrange(pacientes: []) ->list(cPaciente):#MERGE SORT
         if len(pacientes)==1:
             return pacientes
         else:

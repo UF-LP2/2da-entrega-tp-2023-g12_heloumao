@@ -1,7 +1,7 @@
-
+import pytest
 from src.cEnfermero import cEnfermero
 from src.lecturaArchivos import *
-    
-def test_archivos():
-    leido=readNurse()
-    assert leido[0].name=="Sheree"
+from src.cEtiqueta import *
+def test_hospital():
+    mietiqueta: cEtiqueta = cEtiqueta()
+    assert mietiqueta.color == "blue" 
