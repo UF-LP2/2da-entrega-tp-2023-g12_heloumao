@@ -1,5 +1,5 @@
 import pytest
-from src.cEtiqueta import cEtiqueta
+from library.cEtiqueta import cEtiqueta
 
 def test_hospital():
     mietiqueta: cEtiqueta = cEtiqueta()

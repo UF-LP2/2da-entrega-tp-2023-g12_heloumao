@@ -1,8 +1,8 @@
 import cPaciente
-import cEnfermero
+import library.cEnfermero as cEnfermero
 import random
-from binarytree import build
 import binarytree
+from binarytree import build
 
 
 class cHospital:

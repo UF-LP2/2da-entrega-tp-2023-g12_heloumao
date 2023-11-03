@@ -1,9 +1,14 @@
-import cEtiqueta  
+from library.cEtiqueta import cEtiqueta  
+
 class cPaciente:
-    def __init__(self, name:str, lastName:str, id: int, symptoms: [],  gender:str, age:int, priority:bool):
+    def __init__(self, name:str, lastName:str, id: int, symptom1: str, symptom2: str,symptom3: str, gender:str, age:int, priority:bool):
         self.name= name
         self.lastName=lastName
         self.id=id
+        symptoms=[]
+        symptoms.append(symptom1)
+        symptoms.append(symptom2)
+        symptoms.append(symptom3)
         self.symptoms=symptoms
         self.tag=cEtiqueta()
         self.diagnosis=""
@@ -35,8 +40,7 @@ class cPaciente:
              self.name=name
         def SET_LAST_NAME(lastName:str) ->None:
             self.lastName=lastName
-        def SET_SYMPTOMS(symptoms:list(str))->None:
-            self.symptoms=symptoms
+        
         def SET_PRIORITY(prio:bool)-> None:
             self.priority=prio
         def SET_GENDER(gender:str) ->None:

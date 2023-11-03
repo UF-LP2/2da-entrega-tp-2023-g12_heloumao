@@ -1,7 +1,7 @@
 from src.lecturaArchivos import *
 # def main() -> None:
 #   print("Hello World")
-from src.cHospital import *
+from cHospital import *
 if __name__ == "__main__":
   enfermeros=[]
   enfermeros=readNurse()
