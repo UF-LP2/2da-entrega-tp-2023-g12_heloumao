@@ -19,7 +19,7 @@ class cPaciente:
         self.priority=priority
         self.age=age
 
-        def remainingTime(self)->None:
+        def setRemainingTime(self)->None:
             self.remainingTime = self.tag.maxTime-self.timePassed
         
         def timeIncrement(self)->None:
