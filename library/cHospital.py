@@ -1,40 +1,65 @@
-import cPaciente
+from src.cPaciente import cPaciente
 import library.cEnfermero as cEnfermero
 import random
 import binarytree
 from binarytree import build
-
+import datetime
+from datetime import now
+from src.archivos import readNurse
+from src.archivos import register
 
 class cHospital:
-    def __init__(self, name:str, patients: [], nurses:[]):
+    def __init__(self, name:str, patients= None, nursesOnCall=None):  #ctor
         self.name=name
         self.patients=patients
-        self.nurses=nurses
-
-
-    def crearArbol()->binarytree:
-        nodes=[14,12,16,10,13,15,17,8,11,None, None, None, None,None, None,6,9,None,None,4,7,None, None, 2,5,None,None, 1,3,None,None]
-        binary_tree=build(nodes)
-        return binary_tree
+        self.nurses=readNurse()
+        self.nursesOnCall=nursesOnCall
     
-    def shifts():
-        x=random.randrange(23)
-        if x<23 and x>=16:
+    def shifts(self):   #segun la hora determino cuantos enfermeros están de turno
+        x = datetime.datetime.now()
+        if x.hour()<23 and x.hour()>=16:
             return 3
-        elif x>=10 and x<16:
+        elif x.hour()>=10 and x.hour()<16:
             return 5
-        elif x>=6 and x<10:
+        elif x.hour()>=6 and x.hoour()<10:
             return 2
         else:
             return 1
     
-    #def register (pac:cPaciente, pacientes:list(cPaciente), urgents:list(cPaciente))->list(cPaciente):  #LO TENEMOS QUE ARMAR CON EL RECORRIDO DEL ARBOL 
+    def defineShift(self)->str:
+        x = datetime.datetime.now()
+        shiftaux =""
+        if x.hour()<23 and x.hour()>=16:
+            shiftaux= "evening"
+        elif x.hour()>=10 and x.hour()<16:
+            shiftaux= "rush hour"
+        elif x.hour()>=6 and x.hoour()<10:
+            shiftaux= "morning"
+        else:
+            return "night"
+        
+    def GET_NURSE_ONCALL(self)->list(cEnfermero):
+        shiftaux=self.defineShift()
+        retorno = []
+        for x in self.nurses():
+            if x.shift== shiftaux:
+                retorno.append(x)
+        return retorno
 
-    def mergeQueues(pacientes: [], urgents:[])->list(cPaciente):
-        return (urgents+ pacientes)
+    #segun la hora del día voy a completar mi lista de enfermeros que estan de tuno de manera aleatoria
+    def nursesONCALL(self)->None:
+        aux = self.shifts()
+        cant=self.GET_NURSES_ONCALL()
+        for i in range(aux):
+            x=random.randrange(cant)
+            self.nursesOnCall.append(self.nurses[x])
+    
+
+    def mergeQueues(self,pacientes: [], urgents:[])->list(cPaciente):
+        return (urgents + pacientes)
 
 
-    def rearrange(pacientes: []) ->list(cPaciente):#MERGE SORT
+    def rearange(self,pacientes: []) ->list(cPaciente):#MERGE SORT
         if len(pacientes)==1:
             return pacientes
         else:
@@ -42,8 +67,8 @@ class cHospital:
             half1=pacientes[:mid]
             half2=pacientes[mid:]
 
-            array1 = rearrange(half1)
-            array2 = rearrange(half2)
+            array1 = self.rearange(half1)
+            array2 = self.rearange(half2)
 
             i=j=k=0
 
@@ -82,8 +107,18 @@ class cHospital:
 
                 return pacientes
     
+   
+   #pacientes que bajo del archivo para que sean atendidos por color segun canatidad de enfermeros
+    def GET_PATIENTS(self)->list(cPaciente):
+        cantidad=len(self.nursesOnCall)*2
+        i=0
+        while i < cantidad:
+            self.patients.append()
+        register(self.patients)
 
-    def urgents(urgents:list(cPaciente)) -> list (cPaciente):  #INSERTION SORT
+  
+    #con los enfermeros del archivo de pacientes total voy a bajar esa cantidad de pacientes 
+    def urgents(self,urgents:list(cPaciente)) -> list (cPaciente):  #INSERTION SORT
         for i in range(1,len(urgents),1):
             j=i-1
             current= urgents[i]
