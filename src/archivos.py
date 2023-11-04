@@ -2,17 +2,14 @@ import csv
 from src.cPaciente import cPaciente
 from library.cEnfermero import cEnfermero
 
-def readPatient(n:int,patient:list[])->list(cPaciente):
+def readPatient(atendidos:int, n:int)->list(cPaciente):
     pacientes=[]
     with open("pacientes.csv") as file:
         reader=csv.reader(file)
         next(file)
-        cont=0
-        if len(patient)==0:
-        while i<patient(len):
-            x in reader
+        i = 0
+        while x in reader and i > atendidos and i < (n + atendidos):
             pacienteAux=cPaciente(x[0],x[1],x[2],x[3],x[4],x[5],x[6],x[7],x[8])
-            pacientes.append(pacienteAux) 
             x+=1
             i+=1 
     file.close()
@@ -31,7 +28,7 @@ def readNurse():
     return enfermeros
 
  #acá van a llegar los pacientes ya ordenados 
-    def register (pacientes:[])->None: #paso los pacientes atendidos a un archivo para  no perderlos cada vez que corro el programa
+    def register (pacientes:[])->None: #paso los pacientes atendidos a un archivo para no perderlos cada vez que corro el programa
         with open("registro.csv","a") as file:
             writer = csv.writer(file)
             for row in pacientes: 

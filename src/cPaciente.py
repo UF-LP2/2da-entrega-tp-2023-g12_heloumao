@@ -13,11 +13,17 @@ class cPaciente:
         self.tag=cEtiqueta()
         self.diagnosis=""
         self.survives=True
-        self.timeLeft=0
+        self.remainingTime=0
         self.timePassed=0
         self.gender=gender
         self.priority=priority
         self.age=age
+
+        def remainingTime(self)->None:
+            self.remainingTime = self.tag.maxTime-self.timePassed
+        
+        def timeIncrement(self)->None:
+            self.timePassed = self.timePassed + 5
 
         def GET_EDAD()->int:
             return self.age
