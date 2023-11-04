@@ -1,16 +1,10 @@
-from src.cPaciente import cPaciente
-from src.cPaciente import remainingTime
-from src.cPaciente import timeIncrement
-import library.cEnfermero as cEnfermero
-from library.cEnfermero import createTag
+
+from library.cEnfermero import cEnfermero
 import random
-import binarytree
-from binarytree import build
-import datetime
-from datetime import now
 from src.archivos import readNurse
-from src.archivos import register
 from src.archivos import readPatient
+from src.archivos import register
+
 
 class cHospital:
     def __init__(self, name:str, patients= None, nursesOnCall=None):  #ctor
@@ -41,7 +35,7 @@ class cHospital:
         else:
             return "night"
         
-    def GET_NURSE_ONCALL(self,x:int)->list(cEnfermero):
+    def GET_NURSE_ONCALL(self,x:int)->[]:
         shiftaux=self.defineShift(x)
         retorno = []
         for j in self.nurses():
@@ -50,7 +44,7 @@ class cHospital:
         return retorno
 
     #segun la hora del día voy a completar mi lista de enfermeros que estan de tuno de manera aleatoria
-    def nursesONCALL(self,x:int)->None:
+    def setNursesONCALL(self,x:int)->None:
         aux = self.cantEnfermeros(x)
         enfermeros=self.GET_NURSE_ONCALL(x)
         for i in range(aux):
@@ -64,7 +58,7 @@ class cHospital:
 
         self.atendidos=self.atendidos + len(self.nursesOnCall)
         for i in newPatients:
-            createTag(newPatients[i-1])#le cargo la etiqueta al paciente
+            self.nursesOnCall[i].createTag(newPatients[i-1])#le cargo la etiqueta al paciente
         self.patients.append(newPatients)
         for i in range(1,len(self.patients),1):
    
@@ -146,5 +140,5 @@ class cHospital:
 
     def laborDay(self): #simulacion del dia que pasa para ver como se manejan enfermeros en distintos turnos
         for i in range(0,23,1):
-            self.nursesONCALL(i)
+            self.setNursesONCALL(i)
             self.organize()

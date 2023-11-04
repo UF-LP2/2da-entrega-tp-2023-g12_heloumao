@@ -1,6 +1,7 @@
 from src.cPaciente import cPaciente
-import cArbolSintomas
-import cEtiqueta
+from library.cArbolSintomas import tree
+from library.cEtiqueta import cEtiqueta
+
 class cEnfermero:
 
     def __init__(self, name:str, id:int, lastName:str, shift:str, available:bool):
@@ -16,7 +17,7 @@ class cEnfermero:
         return False
     
     def diagnosis(self,paciente:cPaciente): #comparo los sintomas del paciente con los nodos del arbol hasta encontrar su hoja correspondiente (color)
-        arbol=cArbolSintomas.tree()
+        arbol=tree()
         if self.escolor(arbol.name):
             return arbol
         for x in paciente.symptoms:
