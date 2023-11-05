@@ -15,7 +15,7 @@ class cEtiqueta:
         self.maxTime=maxTime
     
     @staticmethod
-    def GET_MAX_TIME(self, color:str)->int:
+    def GET_MAX_TIME( color:str)->int:
         color = color.lower()
         if color== "blue":
             return maxBlue

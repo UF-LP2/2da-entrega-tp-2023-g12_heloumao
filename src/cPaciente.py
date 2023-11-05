@@ -5,11 +5,11 @@ class cPaciente:
         self.name= name
         self.lastName=lastName
         self.id=id
-        symptoms=[]
-        symptoms.append(symptom1)
-        symptoms.append(symptom2)
-        symptoms.append(symptom3)
-        self.symptoms=symptoms
+        symptom=[]
+        symptom.append(symptom1)
+        symptom.append(symptom2)
+        symptom.append(symptom3)
+        self.symptoms=symptom
         self.tag=cEtiqueta()
         self.diagnosis=""
         self.survives=True

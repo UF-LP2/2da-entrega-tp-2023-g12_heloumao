@@ -1,18 +1,18 @@
 from library.cNode import cNode
 import binarytree
 
-def tree(self)->binarytree:
+def tree()->cNode:
     #primero creo todos los nodos y dsp las srelaciones entre ellos
-    unevenBreathing = cNode(4,"unevenbreathing")
+    unevenBreathing = cNode(4,"irregular breathing")
     hemorrhage=cNode(2, "hemorrhage")
     red=cNode(1,"red")
     orange=cNode(3,"orange")
     orange1=cNode(5,"orange")
     unconscious=cNode(6,"unconscious")
     orange2=cNode(7,"orange")
-    agitatedPuslations=cNode(8,"agitatedPulsations")
+    agitatedPuslations=cNode(8,"agitated pulsations")
     yellow=cNode(9,"yellow")
-    blurryVision=cNode(10, "blurryVision")
+    blurryVision=cNode(10, "blurry vision")
     yellow1=cNode(11, "yellow")
     paleness=cNode(12,"paleness")
     yellow2=cNode(13, "yellow")
