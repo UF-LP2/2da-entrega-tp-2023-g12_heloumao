@@ -1,5 +1,5 @@
 from library.cNode import cNode
-import binarytree
+
 
 def tree()->cNode:
     #primero creo todos los nodos y dsp las srelaciones entre ellos
