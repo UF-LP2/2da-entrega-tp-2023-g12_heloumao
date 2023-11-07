@@ -5,9 +5,7 @@ from library.cHospital import *
 if __name__ == "__main__":
   enfermeros=[]
   enfermeros=readNurse()
-  print(enfermeros[0].name)
-  pacientes=[]
-  pacientes=readPatient(0,5)
+  
  # enfermeros[0].createTag(pacientes[0])
  # print(pacientes[0].tag.color)
  # miHospital=cHospital("VL")
@@ -23,6 +21,7 @@ if __name__ == "__main__":
   print("- - - - HOSPITAL - - - -")
   for x in miHospital.patients:
     print(x.name)
+  print(miHospital.patients[2].priority)
 
   
   

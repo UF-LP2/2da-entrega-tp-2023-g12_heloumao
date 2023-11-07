@@ -86,13 +86,6 @@ class cHospital:
 
             array1 = self.rearange(half1)
             array2 = self.rearange(half2)
-            print("- - - - - - - - - -")
-            print("array1")
-            for x in array1:
-                print(x.name)
-            print("\n array2")
-            for x in array2:
-                print(x.name)
 
             i=j=k=0
 
@@ -104,7 +97,7 @@ class cHospital:
                     patients[k]= array2[j]
                     j+=1
                 else: #les queda  a los dos el mismo tiempo
-                    if ((array1[i].priority and array2[j].priority) or (not(array1[i].priority or array2[j].priority))):
+                    if ((array1[i].priority=="True" and array2[j].priority=="True") or (array1[i].priority=="False" and array2[j].priority=="False")):
                         #cuando les queda el mismo tiempo de espera y ambos o ninguno es prioritario (not(nor)); entonces clasifico por edad
                         if array1[i].age < array2[j].age:
                             patients[k]=array2[j]  #el mayor va a ser atendido primero
