@@ -60,7 +60,7 @@ class cHospital:
     def patientsArrival(self) -> None:  #INSERTION SORT
         newPatients = readPatient(self.atendidos, len(self.nursesOnCall))
 
-        self.atendidos=self.atendidos + len(self.nursesOnCall)
+        self.atendidos=self.atendidos + (len(self.nursesOnCall))
         for i in range(len(newPatients)):
             self.nursesOnCall[i].createTag(newPatients[i-1])#le cargo la etiqueta al paciente
         
@@ -71,7 +71,9 @@ class cHospital:
                 newPatients[j+1]= newPatients[j]
                 j=j-1
             newPatients[j+1]=current
+        
         self.patients=self.patients+newPatients
+        self.pacientesActuales()
         return #pasan a la sala de espera del medico
     
    
@@ -129,10 +131,12 @@ class cHospital:
     
    
 
-    def organize(self)->None:
+    def organize(self, hora)->None:
         i=0
         while i<12: #para llegar a la hora
             #ordena por color
+            minutos=5*i
+            print(f"Hora: {hora}: {minutos} ")
             self.patientsArrival()
        
             for x in range(len(self.patients)):   #para simular el paso del tiempo
@@ -153,4 +157,10 @@ class cHospital:
     def laborDay(self): #simulacion del dia que pasa para ver como se manejan enfermeros en distintos turnos
         for i in range(0,23,1):
             self.setNursesONCALL(i)
-            self.organize()
+            self.organize(i)
+
+    def pacientesActuales(self):
+        cont=0
+        for x in self.patients:
+            cont+=1
+            print(f"{cont} - Nombre: {x.name}; Id: {x.id}; Color: {x.tag.color}; Tiempo restante: {x.remainingTime}")

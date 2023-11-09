@@ -1,60 +1,94 @@
 import tkinter as tk
-from src.archivos import readPatient
-from library.cEtiqueta import cEtiqueta
-from src.cPaciente import *
 import random
 
+class Patient:
+    def __init__(self, color, max_time):
+        self.color = color
+        self.max_time = max_time
+        self.remaining_time = max_time
 
-class HospitalInterface:
-    def __init__(self, master):
-        self.master = master
-        self.master.title("Hospital Interface")
-        self.pacientes=readPatient(0,100)
+class HospitalQueue:
+    def __init__(self):
+        self.sequence = ["red", "orange", "yellow", "green", "blue"]
+        self.patients = []
+        self.assisted_patients = []
+        self.minutes_passed = 0
 
-        self.time_label = tk.Label(master, text="Tiempo: 00:00")
-        self.time_label.pack()
+    def generate_patients(self):
+        # Generate a random number of patients (between 1 and 5)
+        num_patients = random.randint(1, 5)
+        
+        for _ in range(num_patients):
+            # Generate a random color for each new patient
+            color = random.choice(self.sequence)
+            max_time = {"red": 0, "orange": 10, "yellow": 60, "green": 120, "blue": 240}[color]
+            patient = Patient(color, max_time)
+            self.patients.append(patient)
 
-        self.nurses_label = tk.Label(master, text="Enfermeros: 0")
-        self.nurses_label.pack()
+    def update_queue(self):
+        self.patients.sort(key=lambda x: x.remaining_time)
 
-        self.next_button = tk.Button(master, text="Avanzar 5 minutos", command=self.advance_time)
-        self.next_button.pack()
+    def increase_time(self):
+        assisted = []
+        for patient in self.patients:
+            if patient.remaining_time > 5:
+                patient.remaining_time -= 5
+            else:
+                patient.remaining_time = 0
+                assisted.append(patient)
 
-        self.current_time = 0  # Representa el tiempo en minutos
-        self.nurses = 2  # Cantidad de enfermeros
-        self.turno = "dia"  # Configura los turnos (por ejemplo, día y noche)
+        for patient in assisted:
+            self.patients.remove(patient)
+            self.assisted_patients.append(patient)
 
+        self.minutes_passed += 5
 
+def update_display():
+    canvas.delete("all")
 
-        # Configura la interfaz para mostrar pacientes
-        self.patient_widgets = []
-        for paciente in self.pacientes:
-            paciente_widget = tk.Label(master, text=f"P{paciente.id}", bg="blue")
-            paciente_widget.pack()
-            self.patient_widgets.append(paciente_widget)
+    # Display minutes passed label
+    canvas.create_text(canvas_width // 2, 20, text=f"Minutes Passed: {hospital_queue.minutes_passed}", font=("Helvetica", 12))
 
-    def advance_time(self):
-        self.current_time += 5
-        self.update_interface()
+    # Display patients
+    row = 1
+    for i, patient in enumerate(hospital_queue.patients):
+        x = i % (canvas_width // 50) * 50
+        y = (i // (canvas_width // 50)) * 50 + 50
+        canvas.create_rectangle(x, y, x + 40, y + 40, fill=patient.color)
+        canvas.create_text(x + 20, y + 20, text=str(patient.remaining_time))
 
-    def update_interface(self):
-    # ... (código existente)
+    # Display assisted patients at the bottom
+    row = (len(hospital_queue.patients) // (canvas_width // 50)) + 2
+    for i, patient in enumerate(hospital_queue.assisted_patients):
+        x = i % (canvas_width // 50) * 50
+        y = row * 50
+        if i > 0 and i % (canvas_width // 50) == 0:
+            row += 1
+        canvas.create_rectangle(x, y, x + 40, y + 40, fill=patient.color)
+        canvas.create_text(x + 20, y + 20, text="Assisted")
 
-    # Calcula la cantidad de pacientes basándose en la cantidad de enfermeros
-        num_pacientes = min(self.nurses, len(self.pacientes))
+def button_pressed():
+    hospital_queue.increase_time()
+    hospital_queue.update_queue()
+    hospital_queue.generate_patients()
+    update_display()
 
-    # Actualiza los colores de los pacientes y muestra el color asignado
-        for paciente_widget, paciente in zip(self.patient_widgets[:num_pacientes], self.pacientes[:num_pacientes]):
-            nuevo_color = self.assign_color()  # Función para asignar un nuevo color
-            paciente_widget.config(bg=nuevo_color)
+# Initialize the hospital queue and generate initial patients
+hospital_queue = HospitalQueue()
+hospital_queue.generate_patients()
 
-    def assign_color(self):
-        # Esta función simula la asignación de colores según alguna lógica específica
-        return random.choice(["rojo", "amarillo", "verde"])
-
-# Crear la aplicación
+# Create the GUI
 root = tk.Tk()
-app = HospitalInterface(root)
+root.title("Hospital Queue")
 
-# Ejecutar la aplicación
+canvas_width = 1400
+canvas_height = 800  # Increased canvas height
+canvas = tk.Canvas(root, width=canvas_width, height=canvas_height)  # Increased canvas height
+canvas.pack()
+
+button = tk.Button(root, text="Increase Time", command=button_pressed)
+button.pack()
+
+update_display()
+
 root.mainloop()
