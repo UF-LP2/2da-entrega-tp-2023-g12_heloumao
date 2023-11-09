@@ -32,25 +32,34 @@ def test_queuesMS():
     assert miHospital.patients[4].name=="Shelby" 
 
     miHospital.patients=miHospital.rearange(miHospital.patients)
-#    assert miHospital.patients[0].name=="Marys"
- #   assert miHospital.patients[1].name=="Dena"
-  #  assert miHospital.patients[2].name=="Rand"  
-   # assert miHospital.patients[3].name=="William"
-  #  assert miHospital.patients[4].name=="Shelby"
+    assert miHospital.patients[0].name=="Rand"
+    assert miHospital.patients[1].name=="Marys"
+    assert miHospital.patients[2].name=="Dena"  
+    assert miHospital.patients[3].name=="Shelby"
+    assert miHospital.patients[4].name=="William"
     miHospital.patientsArrival()
 
+    assert miHospital.patients[0].name=="Rand"
+    assert miHospital.patients[1].name=="Marys"
+    assert miHospital.patients[2].name=="Dena"  
+    assert miHospital.patients[3].name=="Shelby"
+    assert miHospital.patients[4].name=="William"
+    assert miHospital.patients[5].name=="Perle"
+    assert miHospital.patients[6].name=="Morna"
+    assert miHospital.patients[7].name=="Mischa"
+    assert miHospital.patients[8].name=="Abie"
+    assert miHospital.patients[9].name=="Hamilton"
     for x in miHospital.patients:  
         x.timeIncrement()
 
     miHospital.patients=miHospital.rearange(miHospital.patients)
-   # assert miHospital.patients[0].name=="Hamilton"
-    #assert miHospital.patients[1].name=="Hamilton"
-#    assert miHospital.patients[2].name=="Hamilton"
- #   assert miHospital.patients[3].name=="Abie"
-  #  assert miHospital.patients[4].name=="Hamilton"
-   # assert miHospital.patients[5].name=="Perle"
-#    assert miHospital.patients[6].name=="Morna"
- #   assert miHospital.patients[7].name=="Mischa"
-  #  assert miHospital.patients[8].name=="Abie"
-   # assert miHospital.patients[9].name=="Hamilton"
-
+    assert miHospital.patients[0].name=="Perle"
+    assert miHospital.patients[1].name=="Rand"
+    assert miHospital.patients[2].name=="Marys"
+    assert miHospital.patients[3].name=="Dena"
+    assert miHospital.patients[4].name=="Morna"
+    assert miHospital.patients[5].name=="Abie"
+    assert miHospital.patients[6].name=="Mischa"
+    assert miHospital.patients[7].name=="Shelby"
+    assert miHospital.patients[8].name=="William"
+    assert miHospital.patients[9].name=="Hamilton"

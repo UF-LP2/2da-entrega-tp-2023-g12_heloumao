@@ -77,7 +77,7 @@ class cHospital:
    
     def rearange(self,patients):#MERGE SORT
 
-        if len(patients)==1:
+        if len(patients)<=1:
             return patients
         else:
             mid=int(len(patients)/2)
@@ -105,7 +105,7 @@ class cHospital:
                         else:
                             patients[k]=array1[i]
                             i+=1
-                    elif array1[i].priority:   #si array1 es prioritario
+                    elif array1[i].priority=="True":   #si array1 es prioritario
                         patients[k]=array1[i]
                         i+=1
                     else:   #si array2 es prioritario
@@ -135,12 +135,19 @@ class cHospital:
             #ordena por color
             self.patientsArrival()
        
-            for x in len(self.patients):   #para simular el paso del tiempo
+            for x in range(len(self.patients)):   #para simular el paso del tiempo
                 self.patients[x].timeIncrement()
 
-            self.patientes=self.rearange(self.patients)
-            register(self.patients.pop(0))
-            del(self.patients)  #quiero vaciar la lista pero no sé si se hace así
+            self.patients=self.rearange(self.patients)
+            j=cont=0
+            while j<len(self.patients)  :
+                if self.patients[j].remainingTime<=5:
+                    register(self.patients[j])
+                    cont+=1
+                j+=1
+            
+            self.patients=self.patients[cont:]
+            
             i+=1
 
     def laborDay(self): #simulacion del dia que pasa para ver como se manejan enfermeros en distintos turnos
