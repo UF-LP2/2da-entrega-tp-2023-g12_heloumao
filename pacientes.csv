@@ -1,14 +1,18 @@
 first_name,last_name,id,symptom1,symptom2,symptom3,gender,age,priority
-Gloria,Witherington,1,irregular breathing,hemorrhage,irregular breathing,Female,56,False
-Kiri,Lots,2,irregular breathing,blurry vision,agitated pulsations,Female,34,False
-Martita,Naisbitt,3,paleness,pain,hemorrhage,Female,31,True
-Abbye,Freeburn,4,fever,irregular breathing,agitated pulsations,Female,55,True
-Cristine,Inkpin,5, ,hemorrhage,pain,Female,49,False
-Barnabas,Wright,6,hemorrhage,paleness,irregular breathing,Bigender,32,False
-Lazare,Di Ruggiero,7,hemorrhage,pain,agitated pulsations,Male,73,False
-Eleonore,MacMarcuis,8,irregular breathing,paleness,hemorrhage,Bigender,18,True
-Chaddy,Bax,9,irregular breathing,blurry vision,fever,Genderqueer,15,True
-Sosanna,Iacobassi,10,pain, ,irregular breathing,Female,16,False
+William,Hylton,1,hemorrhage,paleness,pain,non-binary,50,True
+Marys,Tapply,2,unconscious,pain,fever,male,49,True
+Dena,McGlew,3,agitated pulsations,hemorrhage,pain,non-binary,97,False
+Shelby,Wilbor,4,,pain,paleness,non-binary,88,True
+Rand,Massow,5,paleness,,irregular breathing,male,98,True
+Shelby,Wilbor,4, ,pain,paleness,non-binary,88,True
+Rand,Massow,5,paleness, ,irregular breathing,male,98,True
+Morna,Greenhalgh,6,fever,irregular breathing,agitated pulsations,prefer not to say,70,True
+Hamilton,Harriott,7,pain,paleness,blurry vision,non-binary,8,False
+Perle,Kirkbright,8,hemorrhage,fever,irregular breathing,male,95,False
+Mischa,Guillard,9,blurry vision,agitated pulsations,,male,74,False
+Mischa,Guillard,9,blurry vision,agitated pulsations, ,male,74,False
+Abie,Snoxall,10,agitated pulsations,paleness,unconscious,prefer not to say,45,True
+Nydia,Forgie,11,blurry vision,hemorrhage, ,male,83,False
 Erena,Storrier,11,fever,unconscious,pain,Female,66,True
 Tracie,Petrussi,12,hemorrhage, ,irregular breathing,Agender,21,True
 Keane,Kerrey,13,pain,paleness,fever,Male,84,False
