@@ -2,14 +2,11 @@ first_name,last_name,id,symptom1,symptom2,symptom3,gender,age,priority
 William,Hylton,1,hemorrhage,paleness,pain,non-binary,50,True
 Marys,Tapply,2,unconscious,pain,fever,male,49,True
 Dena,McGlew,3,agitated pulsations,hemorrhage,pain,non-binary,97,False
-Shelby,Wilbor,4,,pain,paleness,non-binary,88,True
-Rand,Massow,5,paleness,,irregular breathing,male,98,True
 Shelby,Wilbor,4, ,pain,paleness,non-binary,88,True
 Rand,Massow,5,paleness, ,irregular breathing,male,98,True
 Morna,Greenhalgh,6,fever,irregular breathing,agitated pulsations,prefer not to say,70,True
 Hamilton,Harriott,7,pain,paleness,blurry vision,non-binary,8,False
 Perle,Kirkbright,8,hemorrhage,fever,irregular breathing,male,95,False
-Mischa,Guillard,9,blurry vision,agitated pulsations,,male,74,False
 Mischa,Guillard,9,blurry vision,agitated pulsations, ,male,74,False
 Abie,Snoxall,10,agitated pulsations,paleness,unconscious,prefer not to say,45,True
 Nydia,Forgie,11,blurry vision,hemorrhage, ,male,83,False
