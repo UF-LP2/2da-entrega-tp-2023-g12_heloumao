@@ -28,7 +28,14 @@ def readNurse():
     return enfermeros
 
  #acá van a llegar los pacientes ya ordenados 
-def register (paciente:cPaciente)->None: #paso los pacientes atendidos a un archivo para no perderlos cada vez que corro el programa
-    with open("registro.csv","a") as file:
-        writer = csv.writer(file)
-        writer.writerow([paciente.name,paciente.lastName,paciente.id,paciente.symptoms[0],paciente.symptoms[1],paciente.symptoms[2],paciente.gender,paciente.age, paciente.priority])
+def register (paciente:cPaciente, flag)->None: #paso los pacientes atendidos a un archivo para no perderlos cada vez que corro el programa
+    if flag==0:
+        with open("registro.csv","w") as file:
+
+            writer = csv.writer(file)
+            writer.writerow(["first_name","last_name","id","symptom1","symptom2","symptom3","gender","age,priority"])
+            writer.writerow([paciente.name,paciente.lastName,paciente.id,paciente.symptoms[0],paciente.symptoms[1],paciente.symptoms[2],paciente.gender,paciente.age, paciente.priority])
+    else:    
+        with open("registro.csv","a") as file:
+            writer = csv.writer(file)
+            writer.writerow([paciente.name,paciente.lastName,paciente.id,paciente.symptoms[0],paciente.symptoms[1],paciente.symptoms[2],paciente.gender,paciente.age, paciente.priority])

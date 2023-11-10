@@ -14,6 +14,7 @@ class cHospital:
         self.nurses=readNurse()
         self.nursesOnCall:cEnfermero=[]
         self.atendidos = 0 #cantidad de pacientes atenidos
+        self.registrados=0
     
     def cantEnfermeros(self, x:int):   #segun la hora determino cuantos enfermeros están de turno
         if x<23 and x>=16:
@@ -71,9 +72,9 @@ class cHospital:
                 newPatients[j+1]= newPatients[j]
                 j=j-1
             newPatients[j+1]=current
-        
+        self.pacientesActuales(newPatients)
         self.patients=self.patients+newPatients
-        self.pacientesActuales()
+
         return #pasan a la sala de espera del medico
     
    
@@ -126,7 +127,7 @@ class cHospital:
                 j+=1
                 k+=1
         
-        
+ 
         return patients
     
    
@@ -136,7 +137,13 @@ class cHospital:
         while i<12: #para llegar a la hora
             #ordena por color
             minutos=5*i
-            print(f"Hora: {hora}: {minutos} ")
+            if i==0:
+                print("\n")
+                print(f"Hora: {hora}: {minutos}, Enfermeros: {self.cantEnfermeros(hora)}")
+            else:
+                print("\n")
+                print(f"Hora: {hora}: {minutos}")
+
             self.patientsArrival()
        
             for x in range(len(self.patients)):   #para simular el paso del tiempo
@@ -144,9 +151,11 @@ class cHospital:
 
             self.patients=self.rearange(self.patients)
             j=cont=0
+               
             while j<len(self.patients)  :
                 if self.patients[j].remainingTime<=5:
-                    register(self.patients[j])
+                    register(self.patients[j],self.registrados)
+                    self.registrados+=1
                     cont+=1
                 j+=1
             
@@ -155,12 +164,14 @@ class cHospital:
             i+=1
 
     def laborDay(self): #simulacion del dia que pasa para ver como se manejan enfermeros en distintos turnos
-        for i in range(0,23,1):
+        for i in range(0,24,1):
             self.setNursesONCALL(i)
             self.organize(i)
+ 
 
-    def pacientesActuales(self):
+    def pacientesActuales(self, pacientes):
         cont=0
-        for x in self.patients:
+        print("Pacientes ingresados en los ultimos 5 minutos")
+        for x in pacientes:
             cont+=1
             print(f"{cont} - Nombre: {x.name}; Id: {x.id}; Color: {x.tag.color}; Tiempo restante: {x.remainingTime}")

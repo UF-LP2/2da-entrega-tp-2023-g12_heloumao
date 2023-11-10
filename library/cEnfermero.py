@@ -29,6 +29,7 @@ class cEnfermero:
         arbolDiagnostico = self.diagnosis(paciente,arbol)
         tiempoMax = cEtiqueta.GET_MAX_TIME(arbolDiagnostico.name)
         paciente.tag = cEtiqueta(arbolDiagnostico.name,tiempoMax)
+        paciente.remainingTime=tiempoMax
 
 
 
