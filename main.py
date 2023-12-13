@@ -1,5 +1,14 @@
-def main() -> None:
-  print("Hello World")
+from library.cHospital import *
+import interfaz
 
 if __name__ == "__main__":
-  main()
+  enfermeros=[]
+  enfermeros=readNurse()
+  
+  miHospital=cHospital("VL")
+  miHospital.laborDay()
+
+
+  
+  
+
